@@ -53,6 +53,12 @@ def main():
       newFilename = nameFromPdf + ".pdf"
       newFilePath = os.path.join(OUTPUT_PATH, newFilename)
       shutil.copyfile(oldFilePath, newFilePath)
+    
+    # Cleanup any files in temp directory once the job is done
+    for filename in os.listdir(TEMP_PATH):
+      tempFilePath = os.path.join(TEMP_PATH, filename)
+      if os.path.isfile(tempFilePath):
+        os.remove(tempFilePath)
   
 if __name__ == "__main__":
     main()
