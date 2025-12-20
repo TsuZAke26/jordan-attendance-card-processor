@@ -10,7 +10,7 @@ TEMP_PATH = "./images/source-ocr"
 OUTPUT_PATH = "./images/processed"
 
 def extract_name_from_card_image(pdf_filename):
-  """Attempts to determine the name contained within the PDF scan of a tithe card"""
+  """Attempts to determine the name contained within the PDF scan of a membership card"""
   try :
     path = os.path.join(SOURCE_PATH, pdf_filename)
     pdfFile = pymupdf.open(path)
@@ -46,7 +46,7 @@ def main():
       oldFilePath = os.path.join(SOURCE_PATH, filename)
       nameFromPdf = extract_name_from_card_image(filename)
       if not nameFromPdf:
-        print("Name could not be extracted from card iamge. Continuing...")
+        print("Name could not be extracted from card image. Continuing...")
         continue
         
       print("Name: " + nameFromPdf)
@@ -61,4 +61,4 @@ def main():
         os.remove(tempFilePath)
   
 if __name__ == "__main__":
-    main()
+  main()
