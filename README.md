@@ -9,8 +9,10 @@ This is a small Python script intended to be used to extract the name printed on
 How to use
 
 1. Clone the repository. Add the source PDF scans to the `/images/source` folder.
-2. Setup your Python virtual environment by installing PyMuPDF via `pip`:
+2. If not already, install Python on your computer.
+3. Setup your Python virtual environment by installing PyMuPDF via `pip`:
 
 `python -m pip install --upgrade pymupdf`
 
-3. Run the script and watch the magic unfurl. If a name is successfully found, it will be copied over to the `/images/processed` directory with the new filename.
+4. Run the script by opening a command terminal and navigate to the project root directory (e.g. on Windows, holding Shift and right-clicking in the project directory should accomplish this). Once open, type "./attendance-card-processor.py" and the script should run.
+5. Watch the magic unfurl. If a name is successfully found, it will be copied over to the `/images/processed` directory with the new filename.
